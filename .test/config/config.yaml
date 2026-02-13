@@ -1,8 +1,19 @@
-sample_sheet: "config/samples.tsv"
+samplesheet: "config/samples.tsv"
+alignment_dir: "results/umi_tools/dedup"
+reference_fai: "results/get_genome/genome.fasta.fai"
 
-get_genome:
-  ncbi_ftp: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/146/045/GCF_000146045.2_R64/GCF_000146045.2_R64_genomic.fna.gz
+filter_alignment:
+  region: "KF297339.1"
+  extra: "-b -f 2 -F 256 -F 2048 -F 4 -F 8 -q 30"
 
-simulate_reads:
-  read_length: 100
-  read_number: 10000
+filter_frags:
+  min_count: 10
+  min_width: 30
+  max_width: 60
+
+call_tss:
+  min_score: 1000
+
+mapping_stats:
+  deeptools_coverage:
+    extra: "--normalizeUsing CPM --region KF297339.1 --binSize 1 --exactScaling"
