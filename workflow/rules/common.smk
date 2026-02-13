@@ -1,16 +1,31 @@
 # import basic packages
 import pandas as pd
 from snakemake.utils import validate
-
+from os import path
 
 # read sample sheet
 samples = (
-    pd.read_csv(config["sample_sheet"], sep="\t", dtype={"sample": str})
+    pd.read_csv(config["samplesheet"], sep="\t", dtype={"sample": str})
     .set_index("sample", drop=False)
     .sort_index()
 )
 
+###########################
+# VALIDATION
+###########################
 
 # validate sample sheet and config file
 validate(samples, schema="../schemas/samples.schema.yaml")
-validate(config, schema="../schemas/config.schema.yaml")
+# validate(config, schema="../schemas/config.schema.yaml")
+
+###########################
+# HELPER FUNCTIONS
+###########################
+
+
+def get_cram(wildcards):
+    return path.join(config["alignment_dir"], wildcards.sample + ".cram")
+
+
+def get_crai(wildcards):
+    return path.join(config["alignment_dir"], wildcards.sample + ".crai")
