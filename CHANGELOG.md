@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.0 (2026-02-18)
+
+
+### Features
+
+* add call_tss and coverage rules ([27a0c60](https://github.com/aryazand/call_tss/commit/27a0c60a73ab7ac3e51719e6cbac3c8d91a0ef3a))
+
 ## [1.2.0](https://github.com/snakemake-workflows/snakemake-workflow-template/compare/v1.1.0...v1.2.0) (2026-01-20)
 
 
