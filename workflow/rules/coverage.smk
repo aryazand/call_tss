@@ -34,9 +34,9 @@ rule deeptools_5prime_coverage:
     params:
         extra=lambda wildcards: config["mapping_stats"]["deeptools_coverage"]["extra"]
         + (
-            " --filterRNAstrand forward"
+            " --Offset 1 --filterRNAstrand forward"
             if wildcards.direction in ["for", "forward", "plus"]
-            else " --filterRNAstrand reverse"
+            else " --Offset 1 --filterRNAstrand reverse"
         ),
     log:
         "results/deeptools/5prime_coverage/{sample}_{direction}.log",
