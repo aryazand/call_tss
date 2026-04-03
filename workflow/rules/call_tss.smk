@@ -88,7 +88,7 @@ rule filter_frags:
     output:
         "results/frags/{sample}.filtered.bed",
     message:
-        """--- Filtering collapsed fragments for count >= 2."""
+        """--- Filtering collapsed fragments for minumum count and width."""
     params:
         min_count=config["filter_frags"]["min_count"],  # optional count threshold
         min_width=config["filter_frags"]["min_width"],
