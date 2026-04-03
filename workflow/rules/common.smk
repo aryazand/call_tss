@@ -29,3 +29,13 @@ def get_cram(wildcards):
 
 def get_crai(wildcards):
     return path.join(config["alignment_dir"], wildcards.sample + ".crai")
+
+
+def deeptools_fiveprime_extra(wildcards):
+    base = config["mapping_stats"]["deeptools_coverage"]["extra"]
+    strand = (
+        " --Offset 1 --filterRNAstrand forward"
+        if wildcards.direction in ["for", "forward", "plus"]
+        else " --Offset 1 --filterRNAstrand reverse"
+    )
+    return base + strand

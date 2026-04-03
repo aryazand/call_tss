@@ -36,11 +36,6 @@ rule all:
     input:
         "results/tss/TSS.bed",
         expand(
-            "results/deeptools/coverage/{sample}_{direction}.bw",
-            sample=samples.index,
-            direction=["plus", "minus"],
-        ),
-        expand(
             "results/deeptools/5prime_coverage/{sample}_{direction}.bw",
             sample=samples.index,
             direction=["plus", "minus"],
