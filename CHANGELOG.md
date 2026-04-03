@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.0.0 (2026-04-03)
+
+
+### Features
+
+* add call_tss and coverage rules ([c1ffa26](https://github.com/aryazand/call_tss/commit/c1ffa26ca326fe9e618fac154b587117786244ce))
+
+
+### Bug Fixes
+
+* add offset flag for 5prime coverage ([2560390](https://github.com/aryazand/call_tss/commit/2560390eb58797c615fde091f15a4941c1ec395f))
+* keep only 5' coverage rules ([b2437ba](https://github.com/aryazand/call_tss/commit/b2437ba883d87fe85dfb08d54051f29e70287ac6))
+* score from GRanges is now correctly used when converting to Rle ([c1ffa26](https://github.com/aryazand/call_tss/commit/c1ffa26ca326fe9e618fac154b587117786244ce))
+
 ## [1.2.0](https://github.com/snakemake-workflows/snakemake-workflow-template/compare/v1.1.0...v1.2.0) (2026-01-20)
 
 
